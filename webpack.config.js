@@ -6,20 +6,20 @@ module.exports = {
     "babel-polyfill",
     "./src/js/geocodeAA.js",
     "./src/js/sun.js",
-    "./src/js/3newscript.js"
+    "./src/js/3newscript.js",
   ],
   output: {
     path: path.resolve(__dirname, "dist/"),
-    filename: "bundle.js"
+    filename: "bundle.js",
   },
   devServer: {
-    contentBase: "./dist"
+    contentBase: "./dist",
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "./src/index.html"
-    })
+      filename: "clock-index.html",
+      template: "./src/index.html",
+    }),
   ],
   module: {
     rules: [
@@ -27,9 +27,9 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
-      }
+          loader: "babel-loader",
+        },
+      },
       // {
       //   test: /\.s[ac]ss$/i,
       //   use: [
@@ -41,6 +41,6 @@ module.exports = {
       //     "sass-loader"
       //   ]
       // }
-    ]
-  }
+    ],
+  },
 };
