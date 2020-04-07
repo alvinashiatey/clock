@@ -1,0 +1,221 @@
+$primary-color: #000d1a;
+$second-color: #008080;
+$white: rgb(235, 235, 235);
+$font: "PT Sans";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: $font;
+
+  .startqoute {
+    position: absolute;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 1000;
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      .inner__wrapper {
+        height: 20rem;
+        overflow-wrap: break-word;
+        position: absolute;
+        width: 20rem;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+        p {
+          opacity: 0;
+          font-family: $font;
+          span {
+            color: $second-color;
+            right: 0;
+          }
+        }
+
+        .slidein {
+          #collect-info {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            button {
+              color: $white;
+              height: 2rem;
+              background-color: $primary-color;
+              transition: 0.2s ease-in-out;
+              &:hover {
+                background-color: $second-color;
+              }
+            }
+            input {
+              margin-right: 0.5rem;
+              flex-grow: 1;
+              outline: 0;
+              background-color: $white;
+              box-sizing: border-box;
+              padding: 0.5rem;
+              height: 2rem;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
+
+  .wrapper {
+    display: flex;
+    @media only screen and (max-width: 600px) {
+      width: 100vw;
+      flex-direction: column;
+    }
+
+    #scene-container,
+    #sun-container {
+      width: 50vw;
+      height: 100vh;
+      display: block;
+      background-color: $primary-color;
+      position: relative;
+      overflow: hidden;
+      @media only screen and (max-width: 600px) {
+        width: 100vw;
+      }
+    }
+    #sun-container {
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
+      .poems {
+        position: absolute;
+        width: 40vw;
+        height: 100vh;
+        transform: translateX(-50%);
+        left: 50%;
+        color: $white;
+        font-size: 4rem;
+        mix-blend-mode: difference;
+        overflow: hidden;
+        .poem__one {
+          margin: 0;
+          animation: moveup 10s linear infinite;
+          @keyframes moveup {
+            from {
+              transform: translateY(0);
+            }
+            to {
+              transform: translateY(-101.5%);
+            }
+          }
+        }
+      }
+      .info {
+        position: absolute;
+        left: 50%;
+        width: 50vw;
+        transform: translateX(-50%);
+        margin: auto;
+
+        #location1,
+        #weather1 {
+          color: white;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 100;
+        }
+      }
+    }
+
+    #scene-container {
+      .info2 {
+        position: absolute;
+        left: 50%;
+        width: 50vw;
+        transform: translateX(-50%);
+        margin: auto;
+        #location2,
+        #weather2 {
+          color: white;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 100;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .slidein {
+    position: relative;
+    width: 100vw;
+    height: 90px;
+    border-radius: 0;
+    margin: 0;
+    opacity: 100%;
+    clip-path: none;
+    border-bottom: 0.5px dashed rgba($color: #ffffff, $alpha: 0.4);
+
+    #collect-info {
+      width: 100vw;
+      justify-content: center;
+      display: flex;
+      justify-content: space-evenly;
+      margin: auto;
+      margin-top: 20px;
+
+      #location {
+        color: white;
+        cursor: text;
+        background-color: $primary-color;
+        height: 40px;
+        width: 20em;
+        border: 0;
+        outline: 0;
+        font-family: $font;
+        font-size: 1em;
+        border-bottom: 1px solid white;
+        border-radius: 0;
+      }
+      #submit {
+        font-family: inherit;
+        font-size: 0.9em;
+        height: 40px;
+        width: 7em;
+        color: white;
+        outline: none;
+        background-color: #000d1a;
+        border-radius: 5px;
+
+        &:hover,
+        &:focus {
+          background-color: white;
+          color: $primary-color;
+          transition: 1ss ease-in;
+        }
+      }
+    }
+  }
+}

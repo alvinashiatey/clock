@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "PT Sans";
+}
+
+body .startqoute {
+  position: absolute;
+  display: block;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  background-color: white;
+  z-index: 1000;
+}
+
+body .startqoute .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body .startqoute .container .inner__wrapper {
+  height: 20rem;
+  overflow-wrap: break-word;
+  position: absolute;
+  width: 20rem;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+body .startqoute .container .inner__wrapper p {
+  opacity: 0;
+  font-family: "PT Sans";
+}
+
+body .startqoute .container .inner__wrapper p span {
+  color: #008080;
+  right: 0;
+}
+
+body .startqoute .container .inner__wrapper .slidein #collect-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .startqoute .container .inner__wrapper .slidein #collect-info button {
+  color: #ebebeb;
+  height: 2rem;
+  background-color: #000d1a;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+body .startqoute .container .inner__wrapper .slidein #collect-info button:hover {
+  background-color: #008080;
+}
+
+body .startqoute .container .inner__wrapper .slidein #collect-info input {
+  margin-right: 0.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  outline: 0;
+  background-color: #ebebeb;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0.5rem;
+  height: 2rem;
+  border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    display: block;
+  }
+}
+
+body .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  body .wrapper {
+    width: 100vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+body .wrapper #scene-container,
+body .wrapper #sun-container {
+  width: 50vw;
+  height: 100vh;
+  display: block;
+  background-color: #000d1a;
+  position: relative;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  body .wrapper #scene-container,
+  body .wrapper #sun-container {
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body .wrapper #sun-container {
+    display: none;
+  }
+}
+
+body .wrapper #sun-container .poems {
+  position: absolute;
+  width: 40vw;
+  height: 100vh;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+  color: #ebebeb;
+  font-size: 4rem;
+  mix-blend-mode: difference;
+  overflow: hidden;
+}
+
+body .wrapper #sun-container .poems .poem__one {
+  margin: 0;
+  -webkit-animation: moveup 10s linear infinite;
+          animation: moveup 10s linear infinite;
+}
+
+@-webkit-keyframes moveup {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-101.5%);
+            transform: translateY(-101.5%);
+  }
+}
+
+@keyframes moveup {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-101.5%);
+            transform: translateY(-101.5%);
+  }
+}
+
+body .wrapper #sun-container .info {
+  position: absolute;
+  left: 50%;
+  width: 50vw;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin: auto;
+}
+
+body .wrapper #sun-container .info #location1,
+body .wrapper #sun-container .info #weather1 {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+body .wrapper #scene-container .info2 {
+  position: absolute;
+  left: 50%;
+  width: 50vw;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin: auto;
+}
+
+body .wrapper #scene-container .info2 #location2,
+body .wrapper #scene-container .info2 #weather2 {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+@media only screen and (max-width: 600px) {
+  .slidein {
+    position: relative;
+    width: 100vw;
+    height: 90px;
+    border-radius: 0;
+    margin: 0;
+    opacity: 100%;
+    -webkit-clip-path: none;
+            clip-path: none;
+    border-bottom: 0.5px dashed rgba(255, 255, 255, 0.4);
+  }
+  .slidein #collect-info {
+    width: 100vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .slidein #collect-info #location {
+    color: white;
+    cursor: text;
+    background-color: #000d1a;
+    height: 40px;
+    width: 20em;
+    border: 0;
+    outline: 0;
+    font-family: "PT Sans";
+    font-size: 1em;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+  }
+  .slidein #collect-info #submit {
+    font-family: inherit;
+    font-size: 0.9em;
+    height: 40px;
+    width: 7em;
+    color: white;
+    outline: none;
+    background-color: #000d1a;
+    border-radius: 5px;
+  }
+  .slidein #collect-info #submit:hover, .slidein #collect-info #submit:focus {
+    background-color: white;
+    color: #000d1a;
+    -webkit-transition: 1ss ease-in;
+    transition: 1ss ease-in;
+  }
+}
+/*# sourceMappingURL=main.css.map */
